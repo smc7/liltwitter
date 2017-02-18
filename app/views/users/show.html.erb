@@ -9,6 +9,12 @@
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
+<p>
+  <strong>Microposts</strong>
+  <% @user.microposts.each do |mps|%>
+  	<br><%= truncate(mps.content, :length => 200) %>
+  <% end %>
+</p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
